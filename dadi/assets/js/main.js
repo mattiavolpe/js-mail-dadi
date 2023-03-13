@@ -12,28 +12,36 @@ TOOLS
 - DOM Manipulation methods and properties
  */
 
-const formElement = document.querySelector("form");
+const cardElement = document.querySelector(".card");
+
+const btnElement = document.querySelector("button");
 
 const outputElement = document.createElement("div");
+outputElement.style.marginBottom = "2rem";
+outputElement.style.fontSize = "1.125rem";
+outputElement.style.lineHeight = "50px";
 
-formElement.addEventListener("submit", function(e) {
-  
-  e.preventDefault();
+btnElement.addEventListener("click", function() {
+
+  cardElement.style.backgroundColor = "#00000033";
 
   const userRandom = Math.floor(Math.random() * 6) + 1;
   const pcRandom = Math.floor(Math.random() * 6) + 1;
 
-  outputElement.innerHTML = `Punteggio Utente: ${userRandom}<br>
-  Punteggio PC: ${pcRandom}<br>`;
+  outputElement.innerHTML = `Punteggio Utente:<br><strong>${userRandom}</strong><br>
+  Punteggio PC:<br><strong>${pcRandom}</strong><br>`;
 
   if (userRandom > pcRandom) {
-    outputElement.innerHTML += "VINCE L'UTENTE";
+    outputElement.innerHTML += "<strong>COMPLIMENTI<br>HAI VINTO</strong>";
+    cardElement.style.backgroundColor = "#00ff0033";
   } else if (pcRandom > userRandom) {
-    outputElement.innerHTML += "VINCE IL PC";
+    outputElement.innerHTML += "<strong>RITENTA<br>HAI PERSO</strong>";
+    cardElement.style.backgroundColor = "#ff000033";
   } else {
-    outputElement.innerHTML += "PAREGGIO";
+    outputElement.innerHTML += "<strong>PAREGGIO<br>PROVA ANCORA</ strong>";
+    cardElement.style.backgroundColor = "#ffff0033";
   }
 
-  document.body.append(outputElement);
+  cardElement.prepend(outputElement);
 
 });

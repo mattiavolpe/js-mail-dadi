@@ -1,0 +1,75 @@
+:root {
+  --fa-animation-duration: 1.5s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Chakra Petch', sans-serif;
+  background: #00000099;
+  background-image: url("./../img/background-dice.png");
+  background-size: 50%;
+  background-position: center;
+  background-blend-mode: multiply;
+  backdrop-filter: blur(3px);
+}
+
+.container {
+  position: relative;
+  width: 90%;
+  height: 100svh;
+  /* THE FOLLOWING IS A FALLBACK HEIGHT DECLARATION IN CASE OF SVH NOT COMPATIBLE */
+  height: 100vh;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 3rem 2rem;
+  border: 3px solid #ffffff77;
+  border-radius: 20px;
+  color: #ffffff;
+  backdrop-filter: blur(3px);
+  background: #00000033;
+  width: 100%;
+  max-width: 400px;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #ffffff;
+  padding-top: 2rem;
+  font-size: 2.5rem;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 6px;
+  border: 1px solid #ffffff77;
+  padding: 0.5rem 1rem;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 350px) {
+  button > br {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
