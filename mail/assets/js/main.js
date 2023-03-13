@@ -34,12 +34,13 @@ formElement.addEventListener("submit", function(e) {
 
   for (let i = 0; i < mailList.length; i++) {
     if (mailList[i] === mailElement.value) {
-      outputElement.innerHTML = `${mailElement.value}: mail autorizzata ad accedere`;
       authorizationChecker = 1;
     }
   }
 
-  if (authorizationChecker === 0) {
+  if (authorizationChecker === 1) {
+    outputElement.innerHTML = `${mailElement.value}: mail autorizzata ad accedere`;
+  } else {
     outputElement.innerHTML = `${mailElement.value}: mail non autorizzata ad accedere`;
   }
 

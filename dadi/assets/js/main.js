@@ -17,6 +17,7 @@ const formElement = document.querySelector("form");
 const outputElement = document.createElement("div");
 
 formElement.addEventListener("submit", function(e) {
+  
   e.preventDefault();
 
   const userRandom = Math.floor(Math.random() * 6) + 1;
