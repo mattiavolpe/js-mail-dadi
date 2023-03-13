@@ -37,7 +37,7 @@ formElement.addEventListener("submit", function(e) {
   let authorizationChecker = false;
 
   if (mailElement.value === "") {
-    outputElement.innerHTML = "Inserisci una mail";
+    outputElement.innerHTML = "Inserisci una e-mail";
   }
   else {
 
