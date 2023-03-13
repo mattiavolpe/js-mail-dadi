@@ -24,24 +24,35 @@ const mailElement = document.querySelector("input");
 
 const outputElement = document.createElement("div");
 
+outputElement.style.marginTop = "2rem";
+outputElement.style.fontSize = "1.125rem";
+outputElement.style.wordBreak = "break-all";
+
 formElement.insertAdjacentElement('afterend', outputElement);
 
 formElement.addEventListener("submit", function(e) {
 
   e.preventDefault();
 
-  let authorizationChecker = 0;
+  let authorizationChecker = false;
 
-  for (let i = 0; i < mailList.length; i++) {
-    if (mailList[i] === mailElement.value) {
-      authorizationChecker = 1;
-    }
+  if (mailElement.value === "") {
+    outputElement.innerHTML = "Inserisci una mail";
   }
+  else {
 
-  if (authorizationChecker === 1) {
-    outputElement.innerHTML = `${mailElement.value}: mail autorizzata ad accedere`;
-  } else {
-    outputElement.innerHTML = `${mailElement.value}: mail non autorizzata ad accedere`;
+    for (let i = 0; i < mailList.length; i++) {
+      if (mailList[i] === mailElement.value) {
+        authorizationChecker = true;
+      }
+    }
+
+    if (authorizationChecker) {
+      outputElement.innerHTML = `BENVENUTO/A ${mailElement.value}`;
+    } else {
+      outputElement.innerHTML = `ATTENZIONE: ${mailElement.value}: non è una e-mail registrata`;
+    }
+
   }
 
 });
