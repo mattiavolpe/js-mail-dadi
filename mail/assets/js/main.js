@@ -50,7 +50,7 @@ formElement.addEventListener("submit", function(e) {
     if (authorizationChecker) {
       outputElement.innerHTML = `BENVENUTO/A ${mailElement.value}`;
     } else {
-      outputElement.innerHTML = `ATTENZIONE: ${mailElement.value}: non è una e-mail registrata`;
+      outputElement.innerHTML = `ATTENZIONE: ${mailElement.value} non è una e-mail registrata`;
     }
 
   }
