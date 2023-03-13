@@ -12,20 +12,27 @@ TOOLS
 - DOM Manipulation methods and properties
  */
 
-const userRandom = Math.floor(Math.random() * 6) + 1;
-const pcRandom = Math.floor(Math.random() * 6) + 1;
+const formElement = document.querySelector("form");
 
 const outputElement = document.createElement("div");
 
-outputElement.innerHTML = `Punteggio Utente: ${userRandom}<br>
-Punteggio PC: ${pcRandom}<br>`;
+formElement.addEventListener("submit", function(e) {
+  e.preventDefault();
 
-if (userRandom > pcRandom) {
-  outputElement.innerHTML += "VINCE L'UTENTE";
-} else if (pcRandom > userRandom) {
-  outputElement.innerHTML += "VINCE IL PC";
-} else {
-  outputElement.innerHTML += "PAREGGIO";
-}
+  const userRandom = Math.floor(Math.random() * 6) + 1;
+  const pcRandom = Math.floor(Math.random() * 6) + 1;
 
-document.body.append(outputElement);
+  outputElement.innerHTML = `Punteggio Utente: ${userRandom}<br>
+  Punteggio PC: ${pcRandom}<br>`;
+
+  if (userRandom > pcRandom) {
+    outputElement.innerHTML += "VINCE L'UTENTE";
+  } else if (pcRandom > userRandom) {
+    outputElement.innerHTML += "VINCE IL PC";
+  } else {
+    outputElement.innerHTML += "PAREGGIO";
+  }
+
+  document.body.append(outputElement);
+
+});
