@@ -13,7 +13,7 @@ TOOLS
 - eventListener()
 - for()
 - if / else
-- DOM Manipulation
+- DOM Manipulation methods and properties
 */
 
 const mailList = ["mattiavolpe@gmail.com", "lucapiacentini@gmail.com", "alexandrofioretti@gmail.com", "paolozampa@gmail.com", "lorenzocatalano@gmail.com", "fabiopacifici@gmail.com", "fabrizioguariglia@gmail.com", "gianlucasciacca@gmail.com", "donatoriccio@gmail.com", "giulianogostinfini@gmail.com", "francescominutella@gmail.com", "robertonesta@gmail.com", "nicolafaedo@gmail.com", "riccardocastiglione@gmail.com"];
