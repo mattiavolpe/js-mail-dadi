@@ -21,9 +21,9 @@ body {
 .container {
   position: relative;
   width: 90%;
-  height: 100svh;
-  /* THE FOLLOWING IS A FALLBACK HEIGHT DECLARATION IN CASE OF SVH NOT COMPATIBLE */
   height: 100vh;
+  /* THE FOLLOWING IS A FALLBACK HEIGHT DECLARATION IN CASE OF SVH NOT COMPATIBLE */
+  height: 100svh;
   max-width: 1200px;
   margin: auto;
   text-align: center;
